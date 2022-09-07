@@ -1,0 +1,46 @@
+.button1 {
+  background-color: #01b0d3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  text-align: left;
+  float: left;
+}
+.button1:hover {
+  background-color: #242333;
+}
+.fithw {
+  height: 100vh;
+  width: 100%;
+}
+body {
+  background-image: url("../../data/bg.jpg");
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  background-size: cover;
+  background-position: 0%;
+  backdrop-filter: blur(5px);
+  color:white;
+  font-weight: bold;
+  
+}
+#bg{
+  min-height: 100%;
+  min-width: 1024px;
+
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+  }
+th , td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+td:hover{
+    background-color: #01B0D3 ;
+}
+th{
+    background-color: #ADD8E6 ;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.button2 {
+    background-color: #01B0D3;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    text-align: left;
+    float: center;
+
+  }
+  .button2:hover{
+    background-color: #242333;
+  }
+  td {
+   border-radius: 12px; 
+  }
