@@ -6,8 +6,8 @@ th , td {
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
-td:hover{
-    background-color: #01B0D3 ;
+tr:hover{
+    background-color: #e0fcff ;
 }
 th{
     background-color: #ADD8E6 ;
@@ -34,4 +34,9 @@ th{
   }
   td {
    border-radius: 12px; 
+  }
+
+  .action-btn{
+    background-color: white;
+
   }

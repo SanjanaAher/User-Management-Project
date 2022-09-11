@@ -71,10 +71,10 @@ function Add(props) {
         <input id='firstname' type='text' ref={textInput} name= 'firstname' value={firstname} onChange={e => setFirstName(e.target.value)}/>
         
         <label htmlFor='lastname'>Last Name</label>
-        <input id='lastname' type='text' ref={textInput} name= 'lastname' value={lastname} onChange={e => setLastName(e.target.value)}/>
+        <input id='lastname' type='text' name= 'lastname' value={lastname} onChange={e => setLastName(e.target.value)}/>
         
         <label htmlFor='email'>Email </label>
-        <input id='email' type='text' ref={textInput} name= 'email' value={email} onChange={e => setEmail(e.target.value)}/>
+        <input id='email' type='text' name= 'email' value={email} onChange={e => setEmail(e.target.value)}/>
         
         <label htmlFor='status'>Status</label>
         <select value={status} name = "status" onChange={e => setMyStatus(e.target.value)}>
@@ -109,10 +109,10 @@ function Add(props) {
           <input id='updatefirstname' type='text' ref={textInput} name= 'updatefirstname' value={updatefirstname} onChange={e => setUpdateFirstName(e.target.value)}/>
           
           <label htmlFor='updatelastname'>Last Name</label>
-          <input id='updatelastname' type='text' ref={textInput} name= 'updatelastname' value={updatelastname} onChange={e => setUpdateLastName(e.target.value)}/>
+          <input id='updatelastname' type='text' name= 'updatelastname' value={updatelastname} onChange={e => setUpdateLastName(e.target.value)}/>
         
           <label htmlFor='email'>Email </label>
-          <input id='updateemail' type='text' ref={textInput} name= 'updateemail' value={updateemail} onChange={e => setUpdateEmail(e.target.value)}/>
+          <input id='updateemail' type='text' name= 'updateemail' value={updateemail} onChange={e => setUpdateEmail(e.target.value)}/>
          
           
           <label htmlFor='updatestatus'>Status</label>
@@ -134,7 +134,7 @@ function Add(props) {
           
   
           <div>
-            <input className='button3' type='submit' value = 'Edit'/>
+            <input className='button3' type='submit' value = 'Update'/>
             <input  className='button3' type = 'button' value = 'cancel' onClick = {() => props.setIsEditing(false)}/>
           </div>
         </form>

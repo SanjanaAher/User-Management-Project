@@ -4,6 +4,9 @@ import Add from './Add'
 import Header from './Header'
 import List from './List'
 import './Dashboard.css'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 
 function Dashboard() {
@@ -11,22 +14,28 @@ function Dashboard() {
     const [selectedUser, setSelectedUser] = useState(null);
     const [isAdding, setIsAdding] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
+   
 
     const handleEdit = (id) => {
         const [use] = user.filter(use => use.id === id);
+        console.log("HEllo This is edit");
         setSelectedUser(use)
         setIsEditing(true)
     }
     const handleDelete = (id) => {
+        
         const [use] = user.filter(use => use.id === id);
         console.log(use.firstname);
         setUser(user.filter(use=> use.id !== id));
+        
+      
+        
     }
     
 
   return (
     <div>
-        <div class="bg-image">
+        <div className="bg-image">
         <Header
             setIsAdding={setIsAdding}
         />
@@ -37,10 +46,13 @@ function Dashboard() {
             </div>
             <div>
                 <List
+
                     user = {user}
                     handleEdit = {handleEdit}
                     handleDelete = {handleDelete}
+                    
                 />
+               
             </div>
             </>
         )}
@@ -65,6 +77,8 @@ function Dashboard() {
                 />
             </>
         )}
+
+       
         </div>
     </div>
   )
