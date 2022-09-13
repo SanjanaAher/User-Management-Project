@@ -9,6 +9,7 @@ import 'reactjs-popup/dist/index.css';
 
 
 
+
 function Dashboard() {
     const [user, setUser] = useState(userData);
     const [selectedUser, setSelectedUser] = useState(null);
@@ -48,8 +49,10 @@ function Dashboard() {
                 <List
 
                     user = {user}
+                    setUser={setUser}
                     handleEdit = {handleEdit}
                     handleDelete = {handleDelete}
+                   
                     
                 />
                
@@ -78,6 +81,7 @@ function Dashboard() {
             </>
         )}
 
+       
        
         </div>
     </div>

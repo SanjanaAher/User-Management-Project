@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./List.css";
-import Pop from './Popup'
+import Pop from "./Popup";
+import { paginate } from "./Pagination";
 
-function List({ user, handleEdit, handleDelete }) {
+function List({ user,  handleEdit, handleDelete }) {
+  const [page, setPage] = useState(0);
+  const [newUser, setNewUser] = useState({});
+  const x = paginate(user);
+  const [pageArray, setPageArray] = useState([]);
+  const xyz = (x) => {
+    setNewUser(() => x[0][page]);
+  };
+  useEffect(() => {
+    if (pageArray.length <= x[1]) {
+      // setPageArray([]);
+      for (let i = pageArray.length; i < x[1]; i++) {
+        pageArray.push(i + 1);
+      }
+    }
+    if(pageArray.length > x[1]){
+      setPageArray(pageArray.slice(0,page+1));
+    }
+    xyz(x);
+  }, [page]);
+
+  const handlePage = (item) => {
+    setPage(item - 1);
+  };
+
   return (
     <div>
       <table>
@@ -10,6 +35,9 @@ function List({ user, handleEdit, handleDelete }) {
           <tr>
             <th colSpan={2} className="text-center">
               No.{" "}
+            </th>
+            <th colSpan={2} className="text-center">
+              ID{" "}
             </th>
             <th colSpan={4} className="text-center">
               First Name
@@ -33,10 +61,11 @@ function List({ user, handleEdit, handleDelete }) {
         </thead>
 
         <tbody>
-          {user.length > 0 ? (
-            user.map((use, i) => (
+          {newUser.length > 0 ? (
+            newUser.map((use, i) => (
               <tr colSpan={3} key={use.id}>
                 <td colSpan={2}>{i + 1}</td>
+                <td colSpan={2}>{use.id}</td>
                 <td colSpan={4}>
                   {use.firstname ? use.firstname : use.updatefirstname}
                 </td>
@@ -58,7 +87,7 @@ function List({ user, handleEdit, handleDelete }) {
                 </td>
                 <td className="action-btn" colSpan={2}>
                   {/* <button className='button2' onClick={()=>handleDelete(use.id)}>Delete</button> */}
-                 <Pop  handleDelete = {handleDelete} id={ use.id } />
+                  <Pop handleDelete={handleDelete} id={use.id} />
                 </td>
               </tr>
             ))
@@ -69,6 +98,21 @@ function List({ user, handleEdit, handleDelete }) {
           )}
         </tbody>
       </table>
+      <div>
+        {pageArray.map((item, index) => (
+          <>
+            &nbsp;
+            <button
+              className="pagination-button"
+              key={index}
+              onClick={() => handlePage(item)}
+            >
+              {item}
+            </button>
+            &nbsp;
+          </>
+        ))}
+      </div>
     </div>
   );
 }

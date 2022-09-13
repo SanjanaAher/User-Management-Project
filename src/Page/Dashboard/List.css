@@ -40,3 +40,15 @@ th{
     background-color: white;
 
   }
+  .pagination-button{
+   float: center;
+  background-color:#ADD8E6;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  }
+  .pagination-button:hover{
+    background-color:#01B0D3;
+  }
+  
+  
