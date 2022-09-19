@@ -28,6 +28,34 @@ function List({ user,  handleEdit, handleDelete }) {
     setPage(item - 1);
   };
 
+  const nextPage = () => {
+    setPage((oldPage)=>{
+      let nextPage = oldPage + 1;
+      if(nextPage > pageArray.length -1){
+        nextPage=0
+      }
+      return nextPage
+    })
+  }
+
+  const prevPage = () => {
+    setPage((oldPage)=>{
+      let prevPage = oldPage - 1;
+      if(prevPage < 0){
+        prevPage=pageArray.length-1
+      }
+      return prevPage
+    })
+  }
+
+  const firstPage = () => {
+    setPage(0)
+  }
+
+  const lastPage = () => {
+    setPage(pageArray[pageArray.length-1]-1)
+  }
+
   return (
     <div>
       <table>
@@ -98,7 +126,10 @@ function List({ user,  handleEdit, handleDelete }) {
           )}
         </tbody>
       </table>
-      <div>
+<div>
+      <button className="pagination-button" onClick={firstPage}>First</button>
+      &nbsp;
+      <button className="pagination-button" onClick={prevPage}>Prev</button>
         {pageArray.map((item, index) => (
           <>
             &nbsp;
@@ -112,6 +143,9 @@ function List({ user,  handleEdit, handleDelete }) {
             &nbsp;
           </>
         ))}
+         <button className="pagination-button" onClick={nextPage}>Next</button>
+         &nbsp;
+         <button className="pagination-button" onClick={lastPage}>Last</button>
       </div>
     </div>
   );

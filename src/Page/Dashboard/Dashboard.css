@@ -10,7 +10,7 @@
   cursor: pointer;
   border-radius: 12px;
   text-align: left;
-  float: left;
+  float: right;
 }
 .button1:hover {
   background-color: #242333;

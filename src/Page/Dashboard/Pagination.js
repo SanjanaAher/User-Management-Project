@@ -1,6 +1,6 @@
 
 export const paginate = (users) => {
-    const itemsPerPage = 6;
+    const itemsPerPage = 5;
     const pages = Math.ceil(users.length / itemsPerPage);
     const newUser = [];
 
