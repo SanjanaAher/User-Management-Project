@@ -42,9 +42,9 @@ function Dashboard() {
         />
         {!isAdding && !isEditing && (
             <>
-            <div>
+            
                 <button className='button1' onClick = {()=> setIsAdding(true)}>Add User</button>
-            </div>
+            
             <div>
                 <List
 

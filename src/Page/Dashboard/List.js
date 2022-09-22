@@ -13,8 +13,8 @@ function List({ user, handleEdit, handleDelete }) {
   const [pageArray, setPageArray] = useState([]);
   // const [isActive, setIsActive] = useState(false);
 
-
-  const x = paginate(query === "" ? user : data);
+  
+  const x = paginate(query === "" ? user : data );
 
   const search = (data) => {
     console.log(data);
@@ -85,12 +85,12 @@ function List({ user, handleEdit, handleDelete }) {
 
   return (
     <div>
-      <div>
+      <div className="search-div">
         <input
           type="text"
           className="search"
           placeholder="Search..."
-          style={{ width: "250px" }}
+          // style={{ width: "250px"}}
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
@@ -154,9 +154,11 @@ function List({ user, handleEdit, handleDelete }) {
                 </td>
               </tr>
             ))
+            
           ) : (
             <tr>
-              <td colSpan={7}>No Employees</td>
+              <td colSpan={30} onTimeUpdate={()=>setPageArray([])}>No Users</td>
+
             </tr>
           )}
         </tbody>
