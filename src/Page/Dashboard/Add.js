@@ -1,8 +1,9 @@
 import React, {useEffect, useState, useRef} from 'react'
 import './Add.css';
-
+import {useTranslation} from 'react-i18next';
 
 function Add(props) {
+  const {t} = useTranslation(["home","edit"]);
 
   // for adding
   const [firstname,setFirstName] = useState("");

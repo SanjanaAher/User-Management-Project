@@ -1,3 +1,18 @@
 {
-    "USER MANAGEMENT SYSTEM":"USER MANAGEMENT SYSTEM"
+    "USER MANAGEMENT SYSTEM":"USER MANAGEMENT SYSTEM",
+    "Add User": "Add User",
+    "No." : "No.",
+    "ID": "ID",
+    "First Name":"First Name",
+    "Last Name":"Last Name",
+    "Email":"Email",
+    "Status":"Status",
+    "Role":"Role",
+    "Actions":"Actions",
+    "Edit":"Edit",
+    "Delete":"Delete",
+    "First":"First",
+    "Prev": "Prev",
+    "Next":"Next",
+    "Last":"Last"
 }

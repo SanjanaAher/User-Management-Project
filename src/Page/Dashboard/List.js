@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./List.css";
 import Pop from "./Popup";
 import { paginate } from "./Pagination";
+import {useTranslation} from 'react-i18next';
 
 
 function List({ user, handleEdit, handleDelete }) {
+  const {t} = useTranslation(["home"]);
   const [page, setPage] = useState(0);
   const [newUser, setNewUser] = useState({});
 
@@ -98,28 +100,28 @@ function List({ user, handleEdit, handleDelete }) {
         <thead>
           <tr>
             <th colSpan={2} className="text-center">
-              No.{" "}
+            {t("No.")}{" "}
             </th>
             <th colSpan={2} className="text-center">
-              ID{" "}
+            {t("ID")}{" "}
             </th>
             <th colSpan={4} className="text-center">
-              First Name
+            {t("First Name")}
             </th>
             <th colSpan={4} className="text-center">
-              Last Name
+            {t("Last Name")}
             </th>
             <th colSpan={2} className="text-center">
-              Email
+            {t("Email")}
             </th>
             <th colSpan={8} className="text-center">
-              Status
+            {t("Status")}
             </th>
             <th colSpan={7} className="text-center">
-              Role
+            {t("Role")}
             </th>
             <th colSpan={4} className="text-center">
-              Actions
+            {t("Actions")}  
             </th>
           </tr>
         </thead>
@@ -146,7 +148,7 @@ function List({ user, handleEdit, handleDelete }) {
                     className="button2"
                     onClick={() => handleEdit(use.id)}
                   >
-                    Edit
+                     {t("Edit")}
                   </button>
                 </td>
                 <td className="action-btn" colSpan={2}>
@@ -169,11 +171,11 @@ function List({ user, handleEdit, handleDelete }) {
     
       <div>
         <button className="pagination-button" onClick={firstPage}>
-          First
+        {t("First")}
         </button>
         &nbsp;
         <button className="pagination-button" onClick={prevPage}>
-          Prev
+        {t("Prev")}  
         </button>
         {pageArray.map((item, index) => (
           <>
@@ -196,11 +198,11 @@ function List({ user, handleEdit, handleDelete }) {
         &nbsp;
         &nbsp;
         <button className="pagination-button" onClick={nextPage}>
-          Next
+        {t("Next")}  
         </button>
         &nbsp;
         <button className="pagination-button" onClick={lastPage}>
-         Last
+        {t("Last")}
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import './Popup.css';
+import './Popup.css'
 
  
 let Pop;

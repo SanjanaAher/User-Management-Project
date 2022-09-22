@@ -1,12 +1,13 @@
 .modal {
-    font-size: 12px;
+    font-size: 10px;
   }
   .modal > .header {
     width: 100%;
     border-bottom: 1px solid gray;
-    font-size: 18px;
+    font-size: 29px;
     text-align: center;
     padding: 5px;
+    margin: 40px 4px;
   }
   .modal > .actions {
     width: 100%;

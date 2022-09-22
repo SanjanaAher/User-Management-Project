@@ -6,7 +6,7 @@ import List from './List'
 import './Dashboard.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-
+import {useTranslation} from 'react-i18next';
 
 
 
@@ -34,6 +34,8 @@ function Dashboard() {
       
         
     }
+
+    const {t} = useTranslation(["home"]);
     
 
   return (
@@ -46,7 +48,7 @@ function Dashboard() {
         {!isAdding && !isEditing && (
             <>
             
-                <button className='button1' onClick = {()=> setIsAdding(true)}>Add User</button>
+                <button className='button1' onClick = {()=> setIsAdding(true)}>{t("Add User")}</button>
             
             <div>
                 <List

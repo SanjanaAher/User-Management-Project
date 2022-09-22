@@ -1,3 +1,18 @@
 {
-    "USER MANAGEMENT SYSTEM":"SYSTÈME DE GESTION DES UTILISATEURS"
+    "USER MANAGEMENT SYSTEM":"SYSTÈME DE GESTION DES UTILISATEURS",
+    "Add User": "Ajouter un utilisateur",
+    "No." : "Non.",
+    "ID": "IDENTIFIANT",
+    "First Name":"Prénom",
+    "Last Name":"Nom de famille",
+    "Email":"E-mail",
+    "Status":"Statut",
+    "Role":"Rôle",
+    "Actions":"Actions",
+    "Edit":"Éditer",
+    "Delete":"Effacer",
+    "First":"Première",
+    "Prev": "Précédent",
+    "Next":"Prochain",
+    "Last":"Dernier"
 }

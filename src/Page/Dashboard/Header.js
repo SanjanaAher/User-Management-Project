@@ -5,7 +5,7 @@ import i18next from 'i18next';
 import {useTranslation} from 'react-i18next'
 
 function Header({setIsAdding}) {
-  const {i18n,t} = useTranslation(["home"]);
+  const {i18n,t} = useTranslation(["home","edit"]);
 
   useEffect(() => {
     if(localStorage.getItem("i18nextLng")?.length>2){
