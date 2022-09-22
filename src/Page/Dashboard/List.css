@@ -1,54 +1,65 @@
 table {
-    width: 100%;
-  }
+  width: 100%;
+}
 th , td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 tr:hover{
-    background-color: #e0fcff ;
+  background-color: #e0fcff ;
 }
 th{
-    background-color: #ADD8E6 ;
-    text-align: center;
-    color: black;
-    font-weight: bold;
+  background-color: #ADD8E6 ;
+  text-align: center;
+  color: black;
+  font-weight: bold;
 }
 .button2 {
-    background-color: #01B0D3;
-    border: none;
-    color: white;
-    padding: 12px 40px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    text-align: left;
-    float: center;
+  background-color: #01B0D3;
+  border: none;
+  color: white;
+  padding: 12px 40px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  text-align: left;
+  float: center;
 
-  }
-  .button2:hover{
-    background-color: #242333;
-  }
-  td {
-   border-radius: 12px; 
-  }
+}
+.button2:hover{
+  background-color: #242333;
+}
+td {
+ border-radius: 12px; 
+}
 
-  .action-btn{
-    background-color: white;
+.action-btn{
+  background-color: white;
 
-  }
-  .pagination-button{
-   float: center;
-  background-color:#ADD8E6;
-  border-radius: 5px;
-  padding: 8px 16px;
-  text-align: center;
-  }
-  .pagination-button:hover{
-    background-color:#01B0D3;
-  }
-  
-  
+}
+.pagination-button{
+ float: center;
+background-color:#ADD8E6; 
+padding: 8px 16px;
+text-align: center;
+border-radius: 20px;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.pagination-button:focus{
+  background-color:#01B0D3;
+  color:#fff;
+  /* appearance: subtle; */
+} 
+
+
+
+.pagination-button:hover{
+  background-color:#01B0D3;
+}
+
+

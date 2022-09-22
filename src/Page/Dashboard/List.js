@@ -3,61 +3,97 @@ import "./List.css";
 import Pop from "./Popup";
 import { paginate } from "./Pagination";
 
-function List({ user,  handleEdit, handleDelete }) {
+
+function List({ user, handleEdit, handleDelete }) {
   const [page, setPage] = useState(0);
   const [newUser, setNewUser] = useState({});
-  const x = paginate(user);
+
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState(user);
   const [pageArray, setPageArray] = useState([]);
+  // const [isActive, setIsActive] = useState(false);
+
+
+  const x = paginate(query === "" ? user : data);
+
+  const search = (data) => {
+    console.log(data);
+    // if (query !== "") {
+    //   firstPage();
+    // }
+
+    return data.filter(
+      (item) =>
+        item.lastname.toLowerCase().includes(query) ||
+        item.firstname.toLowerCase().includes(query) ||
+        item.email.toLowerCase().includes(query) ||
+        item.id.toString().toLowerCase().includes(query)
+    );
+  };
+
   const xyz = (x) => {
+    console.log(x)
     setNewUser(() => x[0][page]);
   };
   useEffect(() => {
     if (pageArray.length <= x[1]) {
-      // setPageArray([]);
       for (let i = pageArray.length; i < x[1]; i++) {
         pageArray.push(i + 1);
       }
     }
-    if(pageArray.length > x[1]){
-      setPageArray(pageArray.slice(0,page+1));
+    if (pageArray.length > x[1]) {
+      setPageArray(pageArray.slice(0, page + 1));
     }
+    setData(search(user));
     xyz(x);
-  }, [page]);
+  }, [page, query, data]);
 
   const handlePage = (item) => {
     setPage(item - 1);
+    // setIsActive(current => !current);
   };
 
   const nextPage = () => {
-    setPage((oldPage)=>{
+    setPage((oldPage) => {
       let nextPage = oldPage + 1;
-      if(nextPage > pageArray.length -1){
-        nextPage=0
+      if (nextPage > pageArray.length - 1) {
+        nextPage = 0;
       }
-      return nextPage
-    })
-  }
+      return nextPage;
+    });
+  };
 
   const prevPage = () => {
-    setPage((oldPage)=>{
+    setPage((oldPage) => {
       let prevPage = oldPage - 1;
-      if(prevPage < 0){
-        prevPage=pageArray.length-1
+      if (prevPage < 0) {
+        prevPage = pageArray.length - 1;
       }
-      return prevPage
-    })
-  }
+      return prevPage;
+    });
+  };
 
   const firstPage = () => {
-    setPage(0)
-  }
+    setPage(0);
+  };
 
   const lastPage = () => {
-    setPage(pageArray[pageArray.length-1]-1)
-  }
+    setPage(pageArray[pageArray.length - 1] - 1);
+  };
+
+  
 
   return (
     <div>
+      <div>
+        <input
+          type="text"
+          className="search"
+          placeholder="Search..."
+          style={{ width: "250px" }}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
       <table>
         <thead>
           <tr>
@@ -89,7 +125,7 @@ function List({ user,  handleEdit, handleDelete }) {
         </thead>
 
         <tbody>
-          {newUser.length > 0 ? (
+          {newUser != null && newUser.length > 0 ? (
             newUser.map((use, i) => (
               <tr colSpan={3} key={use.id}>
                 <td colSpan={2}>{i + 1}</td>
@@ -114,7 +150,6 @@ function List({ user,  handleEdit, handleDelete }) {
                   </button>
                 </td>
                 <td className="action-btn" colSpan={2}>
-                  {/* <button className='button2' onClick={()=>handleDelete(use.id)}>Delete</button> */}
                   <Pop handleDelete={handleDelete} id={use.id} />
                 </td>
               </tr>
@@ -126,14 +161,27 @@ function List({ user,  handleEdit, handleDelete }) {
           )}
         </tbody>
       </table>
-<div>
-      <button className="pagination-button" onClick={firstPage}>First</button>
-      &nbsp;
-      <button className="pagination-button" onClick={prevPage}>Prev</button>
+
+      
+
+    
+      <div>
+        <button className="pagination-button" onClick={firstPage}>
+          First
+        </button>
+        &nbsp;
+        <button className="pagination-button" onClick={prevPage}>
+          Prev
+        </button>
         {pageArray.map((item, index) => (
           <>
             &nbsp;
             <button
+              // style={{
+              //   backgroundColor: isActive ? 'pink' : '',
+              //   color: isActive ? 'black' : '',
+               
+              // }}
               className="pagination-button"
               key={index}
               onClick={() => handlePage(item)}
@@ -143,9 +191,15 @@ function List({ user,  handleEdit, handleDelete }) {
             &nbsp;
           </>
         ))}
-         <button className="pagination-button" onClick={nextPage}>Next</button>
-         &nbsp;
-         <button className="pagination-button" onClick={lastPage}>Last</button>
+        &nbsp;
+        &nbsp;
+        <button className="pagination-button" onClick={nextPage}>
+          Next
+        </button>
+        &nbsp;
+        <button className="pagination-button" onClick={lastPage}>
+         Last
+        </button>
       </div>
     </div>
   );
