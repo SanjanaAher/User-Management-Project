@@ -14,5 +14,13 @@
     "First":"First",
     "Prev": "Prev",
     "Next":"Next",
-    "Last":"Last"
+    "Last":"Last",
+    "Edit User": "Edit User",
+    "Update": "Update ",
+    "Cancel":" Cancel",
+    "Add USer":"Add User",
+    "Add":"Add",
+    "No Users":"No User",
+    "Search": "Search"
+
 }

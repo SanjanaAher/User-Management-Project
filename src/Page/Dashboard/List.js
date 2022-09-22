@@ -91,7 +91,7 @@ function List({ user, handleEdit, handleDelete }) {
         <input
           type="text"
           className="search"
-          placeholder="Search..."
+          placeholder={t("Search")}
           // style={{ width: "250px"}}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -159,7 +159,7 @@ function List({ user, handleEdit, handleDelete }) {
             
           ) : (
             <tr>
-              <td colSpan={30} onTimeUpdate={()=>setPageArray([])}>No Users</td>
+              <td colSpan={30} onTimeUpdate={()=>setPageArray([])}>{t("No Users")}</td>
 
             </tr>
           )}

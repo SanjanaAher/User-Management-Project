@@ -3,7 +3,7 @@ import './Add.css';
 import {useTranslation} from 'react-i18next';
 
 function Add(props) {
-  const {t} = useTranslation(["home","edit"]);
+  const {t} = useTranslation(["home"]);
 
   // for adding
   const [firstname,setFirstName] = useState("");
@@ -67,17 +67,17 @@ function Add(props) {
   return (
     <div>
       <form onSubmit = {handleAdd}>
-        <h1>Add User</h1>
-        <label htmlFor='firstname'>First Name</label>
+        <h1>{t("Add User")}</h1>
+        <label htmlFor='firstname'>{t("First Name")}</label>
         <input id='firstname' type='text' ref={textInput} name= 'firstname' value={firstname} onChange={e => setFirstName(e.target.value)}/>
         
-        <label htmlFor='lastname'>Last Name</label>
+        <label htmlFor='lastname'>{t("Last Name")}</label>
         <input id='lastname' type='text' name= 'lastname' value={lastname} onChange={e => setLastName(e.target.value)}/>
         
-        <label htmlFor='email'>Email </label>
+        <label htmlFor='email'>{t("Email")} </label>
         <input id='email' type='text' name= 'email' value={email} onChange={e => setEmail(e.target.value)}/>
         
-        <label htmlFor='status'>Status</label>
+        <label htmlFor='status'>{t("Status")}</label>
         <select value={status} name = "status" onChange={e => setMyStatus(e.target.value)}>
           <option>--select--</option>
           <option value="Active">Active</option>
@@ -85,7 +85,7 @@ function Add(props) {
         
         </select>
 
-        <label htmlFor='role'>Role</label>
+        <label htmlFor='role'>{t("Role")}</label>
         <select value={role} name = "role" onChange={e => setMyRole(e.target.value)}>
           <option>--select--</option>
           <option value="Engineer">Engineer</option>
@@ -93,9 +93,9 @@ function Add(props) {
         
         </select>
 
-          <input className='button3' type='submit' value = 'Add'/> 
+          <input className='button3' type='submit' value = {t('Add')}/> 
           <br/>
-          <input className='button3' type = 'button' value = 'Cancel' onClick= {() => props.setIsAdding(false)}/>
+          <input className='button3' type = 'button' value = {t('Cancel')} onClick= {() => props.setIsAdding(false)}/>
       </form>
     </div>
   )
@@ -105,18 +105,18 @@ function Add(props) {
     return (
       <div>
         <form onSubmit = {handleUpdate} className='formedit'>
-          <h1>Edit User</h1>
-          <label className='label1' htmlFor='updatefirstname'>First Name: </label>
+          <h1>{t("Edit User")}</h1>
+          <label className='label1' htmlFor='updatefirstname'>{t("First Name")} </label>
           <input id='updatefirstname' type='text' ref={textInput} name= 'updatefirstname' value={updatefirstname} onChange={e => setUpdateFirstName(e.target.value)}/>
           
-          <label htmlFor='updatelastname'>Last Name</label>
+          <label htmlFor='updatelastname'>{t("Last Name")}</label>
           <input id='updatelastname' type='text' name= 'updatelastname' value={updatelastname} onChange={e => setUpdateLastName(e.target.value)}/>
         
-          <label htmlFor='email'>Email </label>
+          <label htmlFor='email'>{t("Email")} </label>
           <input id='updateemail' type='text' name= 'updateemail' value={updateemail} onChange={e => setUpdateEmail(e.target.value)}/>
          
           
-          <label htmlFor='updatestatus'>Status</label>
+          <label htmlFor='updatestatus'>{t("Status")}</label>
           <select value={updatestatus} name = "updatestatus" onChange={e => setUpdateMyStatus(e.target.value)}>
             <option>--select--</option>
             <option value="Active">Active</option>
@@ -125,7 +125,7 @@ function Add(props) {
           </select>
         
   
-          <label htmlFor='updaterole'>Role</label>
+          <label htmlFor='updaterole'>{t("Role")}</label>
           <select value={updaterole} name = "updaterole" onChange={e => setUpdateMyRole(e.target.value)}>
             <option>--select--</option>
             <option value="Engineer">Engineer</option>
@@ -135,8 +135,8 @@ function Add(props) {
           
   
           <div>
-            <input className='button3' type='submit' value = 'Update'/>
-            <input  className='button3' type = 'button' value = 'cancel' onClick = {() => props.setIsEditing(false)}/>
+            <input className='button3' type='submit' value = {t('Update')}/>
+            <input  className='button3' type = 'button' value = {t('Cancel')} onClick = {() => props.setIsEditing(false)}/>
           </div>
         </form>
       </div>

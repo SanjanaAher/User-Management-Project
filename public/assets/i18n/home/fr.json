@@ -14,5 +14,12 @@
     "First":"Première",
     "Prev": "Précédent",
     "Next":"Prochain",
-    "Last":"Dernier"
+    "Last":"Dernier",
+    "Edit User": "Modifier l'utilisateur",
+    "Update": "Mise à jour",
+    "Cancel":"Annuler",
+    "Add User": "Ajouter un utilisateur",
+    "Add": "Ajouter",
+    "No Users": "Aucun utilisateur",
+    "Search": "Chercher"
 }

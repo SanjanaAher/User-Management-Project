@@ -1,13 +1,15 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import './Popup.css'
+import './Popup.css';
+import {useTranslation} from 'react-i18next';
 
  
 let Pop;
  export default Pop = ({id, handleDelete}) => {
+  const {t} = useTranslation(["home"]);
  return(
   <Popup
-    trigger={<button className="button2"> Delete </button>}
+    trigger={<button className="button2">{t("Delete")} </button>}
     modal
     nested
   >
