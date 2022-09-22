@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,Suspense} from 'react'
 import {userData} from '../../data/index' 
 import Add from './Add'
 import Header from './Header'
@@ -6,6 +6,8 @@ import List from './List'
 import './Dashboard.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+
+
 
 
 
@@ -35,6 +37,7 @@ function Dashboard() {
     
 
   return (
+    <Suspense fallback={null}>
     <div>
         <div className="bg-image">
         <Header
@@ -85,6 +88,7 @@ function Dashboard() {
        
         </div>
     </div>
+    </Suspense>
   )
 }
 
