@@ -48,6 +48,9 @@ text-align: center;
 border-radius: 20px;
   transform: translate(-50%, -50%);
   border: none;
+  
+justify-content: space-between;
+
 }
 
 .pagination-button:focus{
@@ -56,10 +59,21 @@ border-radius: 20px;
   /* appearance: subtle; */
 } 
 
+.pagi-btn{
+  justify-content: space-between;
+  background-color:#ADD8E6;
+  padding: 12px 12px;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  margin: 40px 10px;
+
+}
 
 
 .pagination-button:hover{
   background-color:#01B0D3;
+  display: inline;
 }
 
 .search-div{

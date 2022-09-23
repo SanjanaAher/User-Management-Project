@@ -40,7 +40,7 @@ function Dashboard() {
 
   return (
     <Suspense fallback={null}>
-    <div>
+    <div id='font'>
         <div className="bg-image">
         <Header
             setIsAdding={setIsAdding}

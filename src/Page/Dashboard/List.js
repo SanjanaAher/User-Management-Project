@@ -174,12 +174,13 @@ function List({ user, handleEdit, handleDelete }) {
         {t("First")}
         </button>
         &nbsp;
+        &nbsp;
         <button className="pagination-button" onClick={prevPage}>
         {t("Prev")}  
         </button>
         {pageArray.map((item, index) => (
           <>
-            &nbsp;
+           
             <button
               // style={{
               //   backgroundColor: isActive ? 'pink' : '',
@@ -195,6 +196,7 @@ function List({ user, handleEdit, handleDelete }) {
             &nbsp;
           </>
         ))}
+        &nbsp;
         &nbsp;
         &nbsp;
         <button className="pagination-button" onClick={nextPage}>
