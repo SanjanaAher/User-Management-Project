@@ -1,4 +1,4 @@
-input[type=text], select {
+ input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -8,15 +8,21 @@ input[type=text], select {
     box-sizing: border-box;
     float: left;
     font-size: 15px;
+    margin-top: 10px;
   }
- label{
+label{
     text-align: left;
     float: left;
-    padding-top: 15px;
+    padding-top: 50px;
     font-size: 17px;
   }
   
   div {
+    border-radius: 5px;
+    padding: 30px;
+  }
+
+  .submit{
     border-radius: 5px;
     padding: 30px;
   }
@@ -39,4 +45,4 @@ input[type=text], select {
   }
   .button3:hover{
     background-color: #242333;
-  }
+  } 

@@ -60,7 +60,8 @@ justify-content: space-between;
 } 
 
 .pagi-btn{
-  justify-content: space-between;
+  justify-content: space-around;
+  justify-items : center;
   background-color:#ADD8E6;
   padding: 12px 12px;
   text-align: center;

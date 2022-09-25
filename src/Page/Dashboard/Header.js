@@ -18,7 +18,7 @@ function Header({ setIsAdding }) {
   };
 
   function changeFontSize(type){
-    let ids=["#font"];
+    let ids=["#font", "#search"];
     ids.forEach(id => {
       let el = document.querySelector(id);
       let fontSize = window.getComputedStyle(el,null).getPropertyValue("font-size")

@@ -23,7 +23,7 @@ function App() {
       })
     }else{
       console.log("Details do not match! ")
-      setError("Details do not match!")
+      setError("Wrong Username or password!")
     }
   }
 

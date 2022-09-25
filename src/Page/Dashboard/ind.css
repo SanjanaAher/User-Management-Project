@@ -62,6 +62,10 @@ input[type="password"] {
     border: 3px solid black
   }
 
+.error{
+    text-align: center;
+}
+
 label{
     margin-top: -50px;
     

@@ -90,6 +90,7 @@ function List({ user, handleEdit, handleDelete }) {
       <div className="search-div">
         <input
           type="text"
+          id="search"
           className="search"
           placeholder={t("Search")}
           // style={{ width: "250px"}}
