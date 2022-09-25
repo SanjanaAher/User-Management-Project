@@ -15,16 +15,16 @@ function LoginForm({Login ,error}) {
             <h2>Login</h2>
             {(error !== "")? ( <div className='error'>{error}</div>):""}
             <div className="login">
-            <img src={login} width="300" style={{position: 'relative'}} alt="login"/>
+            <img className='img' src={login} width="300" style={{position: 'relative'}} alt="login"/>
           </div>
             <div className='form-group'>
-                <label htmlFor='email'>Email:</label>
+                <label className='login' htmlFor='email'>Email:</label>
                 <input type='email' name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
 
 
             </div>
             <div className='form-group'>
-                <label htmlFor='passwords'>Password:</label>
+                <label className='login' htmlFor='passwords'>Password:</label>
                 <input type='password' name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
 
 

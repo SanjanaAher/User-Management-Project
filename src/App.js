@@ -32,7 +32,7 @@ function App() {
     setUser({email:""})
   }
   return (
-    <div className="App">
+    <div className="gradient__bg" id='first'>
        {(user.email !== "") ? (
         <div className='welcome'>
           <div>

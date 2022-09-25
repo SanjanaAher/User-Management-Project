@@ -1,26 +1,6 @@
-.button1 {
-  background-color: #01b0d3;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 120px 60px;
-  margin-bottom: -53px;
-  cursor: pointer;
-  border-radius: 12px;
-  text-align: left;
-  float: right;
-}
-.button1:hover {
-  background-color: #242333;
-}
-.fithw {
-  height: 100vh;
-  width: 100%;
-}
-/* body {
+
+
+ /* body {
   background-image: url("../../data/bg.jpg");
   background-repeat: no-repeat;
   background-color: #cccccc;
@@ -30,18 +10,5 @@
   color:white;
   font-weight: bold;
   
-} */
-#bg{
-  min-height: 100%;
-  min-width: 1024px;
-
-
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+} 
+  */

@@ -7,6 +7,7 @@ import './Dashboard.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import {useTranslation} from 'react-i18next';
+import Navbar from './Navbar'
 
 
 
@@ -45,6 +46,7 @@ function Dashboard() {
         <Header
             setIsAdding={setIsAdding}
         />
+        <Navbar/>
         {!isAdding && !isEditing && (
             <>
             

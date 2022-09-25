@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./List.css";
 import Pop from "./Popup";
 import { paginate } from "./Pagination";
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-
-function List({ user, handleEdit, handleDelete }) {
-  const {t} = useTranslation(["home"]);
+function List({ setIsAdding, user, handleEdit, handleDelete }) {
+  const { t } = useTranslation(["home"]);
   const [page, setPage] = useState(0);
   const [newUser, setNewUser] = useState({});
 
@@ -15,8 +14,7 @@ function List({ user, handleEdit, handleDelete }) {
   const [pageArray, setPageArray] = useState([]);
   // const [isActive, setIsActive] = useState(false);
 
-  
-  const x = paginate(query === "" ? user : data );
+  const x = paginate(query === "" ? user : data);
 
   const search = (data) => {
     console.log(data);
@@ -34,7 +32,7 @@ function List({ user, handleEdit, handleDelete }) {
   };
 
   const xyz = (x) => {
-    console.log(x)
+    console.log(x);
     setNewUser(() => x[0][page]);
   };
   useEffect(() => {
@@ -83,110 +81,108 @@ function List({ user, handleEdit, handleDelete }) {
     setPage(pageArray[pageArray.length - 1] - 1);
   };
 
-  
-
   return (
-    <div>
+    <div >
       <div className="search-div">
         <input
           type="text"
           id="search"
           className="search"
           placeholder={t("Search")}
-          // style={{ width: "250px"}}
+          style={{ width: "600px", height: "35px" }}
           onChange={(e) => setQuery(e.target.value)}
         />
+        {/* <button className="button1" onClick={() => setIsAdding(true)}>
+          {t("Add User")}
+        </button> */}
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th colSpan={2} className="text-center">
-            {t("No.")}{" "}
-            </th>
-            <th colSpan={2} className="text-center">
-            {t("ID")}{" "}
-            </th>
-            <th colSpan={4} className="text-center">
-            {t("First Name")}
-            </th>
-            <th colSpan={4} className="text-center">
-            {t("Last Name")}
-            </th>
-            <th colSpan={2} className="text-center">
-            {t("Email")}
-            </th>
-            <th colSpan={8} className="text-center">
-            {t("Status")}
-            </th>
-            <th colSpan={7} className="text-center">
-            {t("Role")}
-            </th>
-            <th colSpan={4} className="text-center">
-            {t("Actions")}  
-            </th>
-          </tr>
-        </thead>
+      <div className="table-div">
+        <table id="table">
+          <thead>
+            <tr>
+              <th colSpan={2} className="text-center">
+                {t("No.")}{" "}
+              </th>
+              <th colSpan={2} className="text-center">
+                {t("ID")}{" "}
+              </th>
+              <th colSpan={4} className="text-center">
+                {t("First Name")}
+              </th>
+              <th colSpan={4} className="text-center">
+                {t("Last Name")}
+              </th>
+              <th colSpan={2} className="text-center">
+                {t("Email")}
+              </th>
+              <th colSpan={8} className="text-center">
+                {t("Status")}
+              </th>
+              <th colSpan={7} className="text-center">
+                {t("Role")}
+              </th>
+              <th colSpan={4} className="text-center">
+                {t("Actions")}
+              </th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {newUser != null && newUser.length > 0 ? (
-            newUser.map((use, i) => (
-              <tr colSpan={3} key={use.id}>
-                <td colSpan={2}>{i + 1}</td>
-                <td colSpan={2}>{use.id}</td>
-                <td colSpan={4}>
-                  {use.firstname ? use.firstname : use.updatefirstname}
-                </td>
-                <td colSpan={4}>
-                  {use.lastname ? use.lastname : use.updatelastname}
-                </td>
-                <td colSpan={2}>{use.email ? use.email : use.updateemail}</td>
-                <td colSpan={8}>
-                  {use.status ? use.status : use.updatestatus}
-                </td>
-                <td colSpan={7}>{use.role ? use.role : use.updaterole}</td>
-                <td className="action-btn" colSpan={2}>
-                  <button
-                    className="button2"
-                    onClick={() => handleEdit(use.id)}
-                  >
-                     {t("Edit")}
-                  </button>
-                </td>
-                <td className="action-btn" colSpan={2}>
-                  <Pop handleDelete={handleDelete} id={use.id} />
+          <tbody>
+            {newUser != null && newUser.length > 0 ? (
+              newUser.map((use, i) => (
+                <tr colSpan={3} key={use.id}>
+                  <td colSpan={2}>{i + 1}</td>
+                  <td colSpan={2}>{use.id}</td>
+                  <td colSpan={4}>
+                    {use.firstname ? use.firstname : use.updatefirstname}
+                  </td>
+                  <td colSpan={4}>
+                    {use.lastname ? use.lastname : use.updatelastname}
+                  </td>
+                  <td colSpan={2}>{use.email ? use.email : use.updateemail}</td>
+                  <td colSpan={8}>
+                    {use.status ? use.status : use.updatestatus}
+                  </td>
+                  <td colSpan={7}>{use.role ? use.role : use.updaterole}</td>
+                  <td className="action-btn" colSpan={2}>
+                    <button
+                      className="button2"
+                      onClick={() => handleEdit(use.id)}
+                    >
+                      {t("Edit")}
+                    </button>
+                  </td>
+                  <td className="action-btn" colSpan={2}>
+                    <Pop handleDelete={handleDelete} id={use.id} />
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={30} onTimeUpdate={() => setPageArray([])}>
+                  {t("No Users")}
                 </td>
               </tr>
-            ))
-            
-          ) : (
-            <tr>
-              <td colSpan={30} onTimeUpdate={()=>setPageArray([])}>{t("No Users")}</td>
+            )}
+          </tbody>
+        </table>
+      </div>
 
-            </tr>
-          )}
-        </tbody>
-      </table>
-
-      
-
-    
       <div>
-        <button className="pagination-button" onClick={firstPage}>
-        {t("First")}
+        <button className="pagi-btn" onClick={firstPage}>
+          {t("First")}
         </button>
-        &nbsp;
-        &nbsp;
+        &nbsp; &nbsp;
         <button className="pagination-button" onClick={prevPage}>
-        {t("Prev")}  
+          {t("Prev")}
         </button>
         {pageArray.map((item, index) => (
           <>
-           
             <button
               // style={{
               //   backgroundColor: isActive ? 'pink' : '',
               //   color: isActive ? 'black' : '',
-               
+
               // }}
               className="pagination-button"
               key={index}
@@ -197,15 +193,13 @@ function List({ user, handleEdit, handleDelete }) {
             &nbsp;
           </>
         ))}
-        &nbsp;
-        &nbsp;
-        &nbsp;
+        &nbsp; &nbsp; &nbsp;
         <button className="pagination-button" onClick={nextPage}>
-        {t("Next")}  
+          {t("Next")}
         </button>
         &nbsp;
         <button className="pagination-button" onClick={lastPage}>
-        {t("Last")}
+          {t("Last")}
         </button>
       </div>
     </div>

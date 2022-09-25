@@ -39,7 +39,7 @@
 
 .log{
   width: 190px;
-  background-color: #ADD8E6;
+  background-color: #6ecdd8;
   border-radius: 10px;
   padding: 8px 8px;
   padding-left: 68px;
@@ -48,8 +48,9 @@
   display: flex;
  
   margin-left: 65px;
-  margin-top: 0px;
+  margin-top: 33px;
   margin-bottom: 10px;
+  margin-right: 50px ;
   float: right;
 }
 
@@ -58,3 +59,71 @@
     outline: none;
     border: 3px solid black
   }
+
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+  body{
+    background: var(--color-bg);
+    width:100%;
+  }
+
+  /* .gradient__bg{
+    
+
+      
+      background:-moz-radial-gradient(circle at 3% 25%, rgba(132, 250, 176, 1) 0%, rgba(143, 211, 244, 1) 100%);
+  
+      
+      background:-webkit-radial-gradient(circle at 3% 25%, rgba(132, 250, 176, 1) 0%, rgba(143, 211, 244, 1) 100%);
+  
+      
+      background:-o-radial-gradient(circle at 3% 25%, rgba(132, 250, 176, 1) 0%, rgba(143, 211, 244, 1) 100%);
+  
+      
+      background:-ms-radial-gradient(circle at 3% 25%, rgba(132, 250, 176, 1) 0%, rgba(143, 211, 244, 1) 100%);
+  
+      
+      background:radial-gradient(circle at 3% 25%, rgba(132, 250, 176, 1) 0%, rgba(143, 211, 244, 1) 100%);
+  
+  
+  } */
+
+  .gradient__text{
+    background: var(--gradient-text);
+    background-clip:text ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section__padding{
+    padding: 4rem 6rem;
+  }
+
+  .section__margin{
+    margin: 4rem 6rem;
+  }
+
+  @media screen and (max-width: 700px){
+    .section__padding{
+      margin: 4rem;
+    }
+    .section__margin{
+      margin: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 550px){
+    .section__padding{
+      margin: 4rem 2rem;
+    }
+    .section__margin{
+      margin: 4rem 2rem;
+    }
+  }
+  
+  

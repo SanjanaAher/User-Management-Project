@@ -67,7 +67,7 @@ function Add(props) {
   return (
     <div>
       <form onSubmit = {handleAdd}>
-        <h1>{t("Add User")}</h1>
+        <h1 className='edit-heading'>{t("Add User")}</h1>
         <label htmlFor='firstname'>{t("First Name")}</label>
         <input id='firstname' type='text' ref={textInput} name= 'firstname' value={firstname} onChange={e => setFirstName(e.target.value)}/>
         
@@ -105,7 +105,7 @@ function Add(props) {
     return (
       <div>
         <form onSubmit = {handleUpdate} className='formedit'>
-          <h1>{t("Edit User")}</h1>
+          <h1 className='edit-heading'>{t("Edit User")}</h1>
           <label className='label1' htmlFor='updatefirstname'>{t("First Name")} </label>
           <input id='updatefirstname' type='text' ref={textInput} name= 'updatefirstname' value={updatefirstname} onChange={e => setUpdateFirstName(e.target.value)}/>
           
