@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState} from "react";
 
 import logo from "./logo.png";
 import "./Navbar.css";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import {lightTheme, darkTheme, GlobalStyles} from './Themes';
+import styled,{ ThemeProvider } from "styled-components";
 
+
+
+const StyledApp = styled.div`
+color: ${(props) => props.theme.fontColor};
+`;
 
 const Navbar = () => {
   const { i18n, t } = useTranslation(["home"]);
@@ -18,6 +25,11 @@ const Navbar = () => {
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
   };
+
+
+ 
+
+
 
   function changeFontSize(type) {
     let ids = ["#font", "#search","#table"];
@@ -34,6 +46,11 @@ const Navbar = () => {
       }
     });
   }
+
+  const [theme, setTheme]=useState('light');
+  const themeToggler = () =>{
+   theme === 'light' ? setTheme('dark') : setTheme('light');
+ };
   return (
     <div className="user__navbar">
       <div className="navbar__btn">
@@ -51,6 +68,7 @@ const Navbar = () => {
               <option value="es">español (Spanish)</option>
             </select>
           </div>
+          <div>
           <button
             className="font-btn"
             onClick={() => changeFontSize("increase")}
@@ -63,9 +81,19 @@ const Navbar = () => {
           >
             A-
           </button>
+
+          </div>
         </div>
         {/* User Management System */}
       </div>
+      <div>
+    <ThemeProvider theme={theme === 'light' ? lightTheme: darkTheme}>
+            <GlobalStyles />
+            <StyledApp>
+              <button className="mode" onClick={() => themeToggler()}>Eye Protection Mode</button>
+            </StyledApp>
+          </ThemeProvider>
+    </div>
     </div>
   );
 };

@@ -21,5 +21,7 @@
     "Add User":"Agregar usuario",
     "Add":"Agregar",
     "No Users":"Sin usuario",
-    "Search":"Búsqueda"
+    "Search":"Búsqueda",
+    "Logout":"Cerrar sesión"
+   
 }

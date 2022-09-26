@@ -21,5 +21,6 @@
     "Add User": "Ajouter un utilisateur",
     "Add": "Ajouter",
     "No Users": "Aucun utilisateur",
-    "Search": "Chercher"
+    "Search": "Chercher",
+    "Logout":"Se déconnecter"
 }

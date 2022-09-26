@@ -3,8 +3,14 @@ import  LoginForm from "./Page/Dashboard/LoginForm"
 import "./Page/Dashboard/ind.css"
 import './App.css';
 import Dashboard  from './Page/Dashboard/Dashboard';
+import {useTranslation} from 'react-i18next';
+
+
+
 
 function App() {
+  
+  const {t} = useTranslation(["home"]);
   const adminUser={
     email:"admin@admin.com",
     password: "admin123"
@@ -31,12 +37,15 @@ function App() {
     console.log("Logout")
     setUser({email:""})
   }
+
+  
   return (
+    <>
     <div className="gradient__bg" id='first'>
        {(user.email !== "") ? (
         <div className='welcome'>
           <div>
-          <button className='log' onClick={logout}>Logout</button>
+          <button className='log' onClick={logout}>{t("Logout")}</button>
           </div>
           <Dashboard/>
          
@@ -46,6 +55,9 @@ function App() {
       )}
      
     </div>
+   
+
+    </>
   );
 }
 

@@ -79,3 +79,25 @@
     outline: none;
     border: 3px solid black
   }
+
+  .mode{
+    width: 190px;
+    background-color: #6ecdd8;
+    border-radius: 10px;
+    padding: 10px 30px;
+    border: 3px solid #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-right: -45px;
+    margin-left: 100px;
+     text-align: center;
+     
+  
+
+  }
+  .mode:focus,
+  .mode:hover{
+    outline: none;
+    border: 3px solid black
+  }
