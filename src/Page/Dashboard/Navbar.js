@@ -1,6 +1,5 @@
 import React, { useEffect , useState} from "react";
 
-import logo from "./logo.png";
 import "./Navbar.css";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
