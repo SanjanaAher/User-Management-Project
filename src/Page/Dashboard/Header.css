@@ -9,6 +9,13 @@
     margin-bottom: 40px;
     width: 100%;
   }
+
+  .header:hover {
+    /* background-color: #242333; */
+    color: #F6DFEB;
+    outline: none;
+    /* border: 3px solid #DF0054; */
+  }
  
 
   

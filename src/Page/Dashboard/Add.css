@@ -1,5 +1,5 @@
   input[type=text], select {
-    width: 100%;
+    width: 95%;
     padding: 12px 20px;
   
     display: inline-block;
@@ -10,7 +10,7 @@
     font-size: 15px;
     margin-top: 10px;
     margin-left:50px;
-    margin-right: 400px;
+    margin-right:10px;
   }
 label{
     text-align: left;
@@ -54,6 +54,8 @@ label{
   }
   .button3:hover{
     background-color: #242333;
+    outline: none;
+    border: 3px solid #DF0054;
   } 
   
   .edit-heading{

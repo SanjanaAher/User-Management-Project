@@ -49,7 +49,7 @@ function List({ setIsAdding, user, handleEdit, handleDelete }) {
   }, [page, query, data]);
 
   const handlePage = (item) => {
-    setPage(item - 1);
+    setPage(item + 1);
     // setIsActive(current => !current);
   };
 
@@ -82,7 +82,7 @@ function List({ setIsAdding, user, handleEdit, handleDelete }) {
   };
 
   return (
-    <div >
+    <div>
       <div className="search-div">
         <input
           type="text"
@@ -168,39 +168,53 @@ function List({ setIsAdding, user, handleEdit, handleDelete }) {
         </table>
       </div>
 
-      <div>
-        <button className="pagi-btn" onClick={firstPage}>
-          {t("First")}
-        </button>
-        &nbsp; &nbsp;
-        <button className="pagination-button" onClick={prevPage}>
-          {t("Prev")}
-        </button>
-        {pageArray.map((item, index) => (
-          <>
-            <button
-              // style={{
-              //   backgroundColor: isActive ? 'pink' : '',
-              //   color: isActive ? 'black' : '',
+      < div className="pagination-div">
+        
+          <button className="pagination-buttons" onClick={firstPage}>
+            {t("First")}
+          </button>
+        
 
+        
+          <button className="pagination-buttons" onClick={prevPage}>
+            {t("Prev")}
+          </button>
+        
+
+        {/* {pageArray.map((item, index) => ( */}
+
+        {/* <button
+              // style={{
+                //   backgroundColor: isActive ? 'pink' : '',
+              //   color: isActive ? 'black' : '',
+              
               // }}
               className="pagination-button"
               key={index}
               onClick={() => handlePage(item)}
-            >
-              {item}
-            </button>
-            &nbsp;
-          </>
-        ))}
-        &nbsp; &nbsp; &nbsp;
-        <button className="pagination-button" onClick={nextPage}>
-          {t("Next")}
-        </button>
-        &nbsp;
-        <button className="pagination-button" onClick={lastPage}>
-          {t("Last")}
-        </button>
+            > */}
+
+        {/* </button> */}
+
+        {/* ))} */}
+
+        
+          <h4 className="page-label">
+            {page + 1} of {pageArray.length}
+          </h4>
+        
+
+        
+          <button className="pagination-buttons" onClick={nextPage}>
+            {t("Next")}
+          </button>
+        
+
+        
+          <button className="pagination-buttons" onClick={lastPage}>
+            {t("Last")}
+          </button>
+        
       </div>
     </div>
   );
